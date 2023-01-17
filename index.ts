@@ -15,14 +15,14 @@ app.use(cors());
 // test
 
 const QuizRoute = require("./api/Quiz");
-//const UserRoute = require("./api/User");
+const UserRoute = require("./api/User");
 const QuestionRoute = require("./api/Question");
 const AnswerRoute = require("./api/Answer");
 const ScoreRoute = require("./api/Score");
 const ResponseRoute = require("./api/Response");
 
 app.use("/quiz", QuizRoute);
-//app.use("/", UserRoute);
+app.use("/", UserRoute);
 app.use("/", QuestionRoute);
 app.use("/", AnswerRoute);
 app.use("/", ScoreRoute);
