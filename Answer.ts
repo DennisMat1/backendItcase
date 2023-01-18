@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const Answers = require("../model/answersModel")
-
+const Answers = require("./answersModel");
 
 app.route("/get/answers").get(async (req: any, res: any) => {
   let x = await Answers.find();
@@ -10,7 +9,7 @@ app.route("/get/answers").get(async (req: any, res: any) => {
 
 app.route("/get/answers/:id").get(async (req: any, res: any) => {
   let x = await Answers.find({ fkQuestion: req.params.id });
-  res.send(x)
+  res.send(x);
 });
 
 app.route("/create/answers").post(async (req: any, res: any) => {
@@ -19,11 +18,11 @@ app.route("/create/answers").post(async (req: any, res: any) => {
       _id: item._id,
       answer: item.answer,
       isCorrect: item.isCorrect,
-      fkQuestion: item.fkQuestion
-    })
+      fkQuestion: item.fkQuestion,
+    });
     await answer.save();
   });
-  res.send('response')
+  res.send("response");
 });
 
 app.route("/update/answers").put(async (req: any, res: any) => {
@@ -36,26 +35,24 @@ app.route("/update/answers").put(async (req: any, res: any) => {
   });
 
   myPromise
-    .then(r => {
+    .then((r) => {
       req.body[1].forEach(async (dataAnswers: any) => {
         const answer = new Answers({
           _id: dataAnswers._id,
           answer: dataAnswers.answer,
           isCorrect: dataAnswers.isCorrect,
-          fkQuestion: dataAnswers.fkQuestion
-        })
+          fkQuestion: dataAnswers.fkQuestion,
+        });
         await answer.save();
-      })
-    }
-    )
-    .then(r => res.send('response'))
+      });
+    })
+    .then((r) => res.send("response"));
 });
 
 app.route("/delete/answers/:id").delete(async (req: any, res: any) => {
-  await Answers.deleteMany({ fkQuestion: req.params.id })
-  res.send('response')
+  await Answers.deleteMany({ fkQuestion: req.params.id });
+  res.send("response");
 });
 
-
 module.exports = app;
-export { };
+export {};

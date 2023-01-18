@@ -14,12 +14,12 @@ app.use(bodyParser.json());
 app.use(cors());
 // test
 
-const QuizRoute = require("./api/Quiz");
-const UserRoute = require("./api/User");
-const QuestionRoute = require("./api/Question");
-const AnswerRoute = require("./api/Answer");
-const ScoreRoute = require("./api/Score");
-const ResponseRoute = require("./api/Response");
+const QuizRoute = require("./Quiz");
+const UserRoute = require("./User");
+const QuestionRoute = require("./Question");
+const AnswerRoute = require("./Answer");
+const ScoreRoute = require("./Score");
+const ResponseRoute = require("./Response");
 
 app.use("/quiz", QuizRoute);
 app.use("/", UserRoute);
