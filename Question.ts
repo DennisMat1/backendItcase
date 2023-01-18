@@ -2,7 +2,7 @@
 import express from "express";
 const app = express.Router();
 const mongoose = require("mongoose");
-const Question = require("./questionsModel");
+const Question = require("../app/questionsModel");
 
 // mongoose.connect("mongodb+srv://Ventigrate-GroepA:itcase2022@ventigrate.ekxtpls.mongodb.net/ITCase?retryWrites=true&w=majority");
 

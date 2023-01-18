@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Quizzes = require("./quizzesModel");
+const Quizzes = require("../app/quizzesModel");
 
 router.route("/get/quizzes").get(async (req: any, res: any) => {
   let a = await Quizzes.find();
@@ -16,7 +16,7 @@ router.route("/get/quizzes/:chosenquiz").get(async (req: any, res: any) => {
 
 //******* */
 
-const Quiz = require("./quizzesModel");
+const Quiz = require("../app/quizzesModel");
 
 router.post("/get", (req: any, res: any) => {
   const { id, userId } = req.body;

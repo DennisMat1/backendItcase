@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const Answers = require("./answersModel");
+const Answers = require("../app/answersModel");
 
 app.route("/get/answers").get(async (req: any, res: any) => {
   let x = await Answers.find();

@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const quizzes = require("./quizzesModel");
-const questions = require("./questionsModel");
-const answers = require("./answersModel");
-const collaborators = require("./collaboratorsModel");
-const users = require("./usersModel");
-const scores = require("./scoresModel");
+const quizzes = require("../app/quizzesModel");
+const questions = require("../app/questionsModel");
+const answers = require("../app/answersModel");
+const collaborators = require("../app/collaboratorsModel");
+const users = require("../app/usersModel");
+const scores = require("../app/scoresModel");
 
 (async () => {
   await mongoose.connect(
