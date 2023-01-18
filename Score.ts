@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Scores = require("../app/ScoresModel");
+const Scores = require("/app/ScoresModel");
 
 router.route("/get/scores").get(async (req: any, res: any) => {
   let a = await Scores.find();
